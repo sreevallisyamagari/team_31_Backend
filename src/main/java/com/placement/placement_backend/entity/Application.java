@@ -61,4 +61,14 @@ public class Application {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    private String appliedDate;
+
+    public String getAppliedDate() {
+        return appliedDate;
+    }
+
+    public void setAppliedDate(String appliedDate) {
+        this.appliedDate = appliedDate;
+    }
 }

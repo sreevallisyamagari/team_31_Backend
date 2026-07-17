@@ -101,4 +101,34 @@ public class UserService {
                 user.getResume()
         );
     }
+
+    // Update Student Profile
+    public ProfileResponse updateProfile(Long id, ProfileResponse profile) {
+
+        User user = userRepository.findById(id).orElse(null);
+
+        if (user == null) {
+            return null;
+        }
+
+        user.setName(profile.getName());
+        user.setEmail(profile.getEmail());
+        user.setDepartment(profile.getDepartment());
+        user.setCgpa(profile.getCgpa());
+        user.setBacklogs(profile.getBacklogs());
+        user.setPhone(profile.getPhone());
+
+        userRepository.save(user);
+
+        return new ProfileResponse(
+                user.getId(),
+                user.getName(),
+                user.getEmail(),
+                user.getDepartment(),
+                user.getCgpa(),
+                user.getBacklogs(),
+                user.getPhone(),
+                user.getResume()
+        );
+    }
 }

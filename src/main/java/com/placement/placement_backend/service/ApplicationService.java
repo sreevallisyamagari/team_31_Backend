@@ -49,6 +49,7 @@ public class ApplicationService {
         application.setStudent(student);
         application.setDrive(drive);
         application.setStatus("Applied");
+        application.setAppliedDate(java.time.LocalDate.now().format(java.time.format.DateTimeFormatter.ofPattern("dd MMM yyyy")));
 
         Application savedApplication = applicationRepository.save(application);
 

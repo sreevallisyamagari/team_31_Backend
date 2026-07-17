@@ -57,6 +57,13 @@ public class StudentController {
                 .collect(Collectors.toList());
     }
 
+    // Update Student Profile
+    @PutMapping("/profile/{id}")
+    public ProfileResponse updateProfile(@PathVariable Long id,
+            @RequestBody ProfileResponse profile) {
+        return userService.updateProfile(id, profile);
+    }
+
     // Notifications
     @GetMapping("/notifications/{studentId}")
     public List<NotificationResponse> getNotifications(@PathVariable Long studentId) {
