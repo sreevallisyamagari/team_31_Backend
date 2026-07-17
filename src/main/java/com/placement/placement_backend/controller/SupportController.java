@@ -40,4 +40,12 @@ public class SupportController {
         return supportService.markAsResolved(id);
     }
 
+    // Pending Tickets Count
+    @GetMapping("/count/pending")
+    public long getPendingCount() {
+
+        return supportService.getPendingCount();
+
+    }
+
 }

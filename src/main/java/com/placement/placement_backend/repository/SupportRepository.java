@@ -15,4 +15,7 @@ public interface SupportRepository extends JpaRepository<SupportMessage, Long> {
     @Query("SELECT s FROM SupportMessage s WHERE s.studentId = :studentId")
     List<SupportMessage> findTicketsByStudentId(@Param("studentId") Long studentId);
 
+    // Count Pending Tickets
+    long countByStatus(String status);
+
 }

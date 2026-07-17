@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import com.placement.placement_backend.dto.ApplyRequest;
 import com.placement.placement_backend.entity.Application;
 import com.placement.placement_backend.service.ApplicationService;
 
@@ -18,9 +19,9 @@ public class ApplicationController {
 
     // Student Apply
     @PostMapping
-    public Application apply(@RequestBody Application application) {
+    public Application apply(@RequestBody ApplyRequest request) {
 
-        return service.apply(application);
+        return service.apply(request);
 
     }
 

@@ -48,4 +48,11 @@ public class SupportService {
         return supportRepository.save(ticket);
     }
 
+    // Pending Tickets Count
+    public long getPendingCount() {
+
+        return supportRepository.countByStatus("Pending");
+
+    }
+
 }

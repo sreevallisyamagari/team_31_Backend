@@ -10,19 +10,23 @@ public class Application {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long studentId;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "student_id")
+    private User student;
 
-    private Long driveId;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "drive_id")
+    private CompanyDrive drive;
 
     private String status;
 
     public Application() {
     }
 
-    public Application(Long id, Long studentId, Long driveId, String status) {
+    public Application(Long id, User student, CompanyDrive drive, String status) {
         this.id = id;
-        this.studentId = studentId;
-        this.driveId = driveId;
+        this.student = student;
+        this.drive = drive;
         this.status = status;
     }
 
@@ -34,20 +38,20 @@ public class Application {
         this.id = id;
     }
 
-    public Long getStudentId() {
-        return studentId;
+    public User getStudent() {
+        return student;
     }
 
-    public void setStudentId(Long studentId) {
-        this.studentId = studentId;
+    public void setStudent(User student) {
+        this.student = student;
     }
 
-    public Long getDriveId() {
-        return driveId;
+    public CompanyDrive getDrive() {
+        return drive;
     }
 
-    public void setDriveId(Long driveId) {
-        this.driveId = driveId;
+    public void setDrive(CompanyDrive drive) {
+        this.drive = drive;
     }
 
     public String getStatus() {
