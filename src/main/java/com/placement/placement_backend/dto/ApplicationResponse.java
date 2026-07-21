@@ -14,12 +14,12 @@ public class ApplicationResponse {
     }
 
     public ApplicationResponse(Long applicationId,
-                               Long studentId,
-                               String studentName,
-                               String companyName,
-                               String jobRole,
-                               String status,
-                               String resume) {
+            Long studentId,
+            String studentName,
+            String companyName,
+            String jobRole,
+            String status,
+            String resume) {
         this.applicationId = applicationId;
         this.studentId = studentId;
         this.studentName = studentName;

@@ -14,12 +14,12 @@ public class ReportResponse {
     }
 
     public ReportResponse(long totalStudents,
-                          long totalDrives,
-                          long totalApplications,
-                          long applied,
-                          long shortlisted,
-                          long selected,
-                          long rejected) {
+            long totalDrives,
+            long totalApplications,
+            long applied,
+            long shortlisted,
+            long selected,
+            long rejected) {
         this.totalStudents = totalStudents;
         this.totalDrives = totalDrives;
         this.totalApplications = totalApplications;

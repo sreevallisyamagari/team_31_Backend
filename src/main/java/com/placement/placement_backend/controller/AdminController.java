@@ -68,5 +68,31 @@ public class AdminController {
         return adminService.deleteStudent(id);
 
     }
+    // Create New Admin
+@PostMapping("/create-admin")
+public User createAdmin(@RequestBody User admin) {
+
+    return adminService.createAdmin(admin);
+
+}
+// View All Admins
+@GetMapping("/all-admins")
+public List<User> getAllAdmins() {
+    return adminService.getAllAdmins();
+}
+// Update Admin
+@PutMapping("/update-admin/{id}")
+public User updateAdmin(
+        @PathVariable Long id,
+        @RequestBody User admin) {
+
+    return adminService.updateAdmin(id, admin);
+}
+// Delete Admin
+@DeleteMapping("/delete-admin/{id}")
+public String deleteAdmin(@PathVariable Long id) {
+
+    return adminService.deleteAdmin(id);
+}
 
 }

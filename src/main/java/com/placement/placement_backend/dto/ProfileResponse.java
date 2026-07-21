@@ -10,14 +10,15 @@ public class ProfileResponse {
     private Integer backlogs;
     private String phone;
     private String resume;
+    private String profilePictureUrl;
 
     public ProfileResponse() {
     }
 
     public ProfileResponse(Long id, String name, String email,
-                           String department, Double cgpa,
-                           Integer backlogs, String phone,
-                           String resume) {
+            String department, Double cgpa,
+            Integer backlogs, String phone,
+            String resume, String profilePictureUrl) {
 
         this.id = id;
         this.name = name;
@@ -27,6 +28,7 @@ public class ProfileResponse {
         this.backlogs = backlogs;
         this.phone = phone;
         this.resume = resume;
+        this.profilePictureUrl = profilePictureUrl;
     }
 
     public Long getId() {
@@ -91,5 +93,13 @@ public class ProfileResponse {
 
     public void setResume(String resume) {
         this.resume = resume;
+    }
+
+    public String getProfilePictureUrl() {
+        return profilePictureUrl;
+    }
+
+    public void setProfilePictureUrl(String profilePictureUrl) {
+        this.profilePictureUrl = profilePictureUrl;
     }
 }

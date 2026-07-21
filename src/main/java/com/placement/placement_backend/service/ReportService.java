@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.placement.placement_backend.dto.ReportResponse;
+import com.placement.placement_backend.entity.Role;
 import com.placement.placement_backend.repository.ApplicationRepository;
 import com.placement.placement_backend.repository.CompanyDriveRepository;
 import com.placement.placement_backend.repository.UserRepository;
@@ -24,7 +25,7 @@ public class ReportService {
 
         return new ReportResponse(
 
-                userRepository.count(),
+                userRepository.countByRole(Role.STUDENT),
 
                 driveRepository.count(),
 

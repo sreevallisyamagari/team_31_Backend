@@ -30,12 +30,15 @@ public class User {
 
     private String resume;
 
+    @Column(length = 1000)
+    private String profilePictureUrl;
+
     public User() {
     }
 
     public User(Long id, String name, String email, String password, Role role,
             String department, Double cgpa, Integer backlogs,
-            String phone, String resume) {
+            String phone, String resume, String profilePictureUrl) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -46,6 +49,7 @@ public class User {
         this.backlogs = backlogs;
         this.phone = phone;
         this.resume = resume;
+        this.profilePictureUrl = profilePictureUrl;
     }
 
     public Long getId() {
@@ -126,5 +130,13 @@ public class User {
 
     public void setResume(String resume) {
         this.resume = resume;
+    }
+
+    public String getProfilePictureUrl() {
+        return profilePictureUrl;
+    }
+
+    public void setProfilePictureUrl(String profilePictureUrl) {
+        this.profilePictureUrl = profilePictureUrl;
     }
 }

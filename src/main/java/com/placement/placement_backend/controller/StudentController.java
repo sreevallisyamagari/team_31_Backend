@@ -51,10 +51,8 @@ public class StudentController {
     @GetMapping("/results/{studentId}")
     public List<Application> getPlacementResults(@PathVariable Long studentId) {
 
-        return applicationService.getStudentApplications(studentId)
-                .stream()
-                .filter(a -> "Selected".equalsIgnoreCase(a.getStatus()))
-                .collect(Collectors.toList());
+        return applicationService.getStudentApplications(studentId);
+
     }
 
     // Update Student Profile

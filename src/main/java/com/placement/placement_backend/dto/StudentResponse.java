@@ -16,9 +16,9 @@ public class StudentResponse {
     }
 
     public StudentResponse(Long id, String name, String email,
-                           String department, Double cgpa,
-                           Integer backlogs, String phone,
-                           String resume, String role) {
+            String department, Double cgpa,
+            Integer backlogs, String phone,
+            String resume, String role) {
 
         this.id = id;
         this.name = name;

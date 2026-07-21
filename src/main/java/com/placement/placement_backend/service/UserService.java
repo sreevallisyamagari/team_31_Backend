@@ -66,7 +66,7 @@ public class UserService {
 
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
             return new LoginResponse(
-                    "Invalid Password",
+                    "Invalid Email or Password",
                     null,
                     "",
                     ""
@@ -98,7 +98,8 @@ public class UserService {
                 user.getCgpa(),
                 user.getBacklogs(),
                 user.getPhone(),
-                user.getResume()
+                user.getResume(),
+                user.getProfilePictureUrl()
         );
     }
 
@@ -117,6 +118,16 @@ public class UserService {
         user.setCgpa(profile.getCgpa());
         user.setBacklogs(profile.getBacklogs());
         user.setPhone(profile.getPhone());
+        
+        // Ensure profile picture is updated if provided
+        if (profile.getProfilePictureUrl() != null) {
+             user.setProfilePictureUrl(profile.getProfilePictureUrl());
+        }
+        
+        // Ensure resume is updated if provided
+        if (profile.getResume() != null) {
+             user.setResume(profile.getResume());
+        }
 
         userRepository.save(user);
 
@@ -128,7 +139,8 @@ public class UserService {
                 user.getCgpa(),
                 user.getBacklogs(),
                 user.getPhone(),
-                user.getResume()
+                user.getResume(),
+                user.getProfilePictureUrl()
         );
     }
 }

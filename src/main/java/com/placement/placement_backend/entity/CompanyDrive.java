@@ -26,13 +26,22 @@ public class CompanyDrive {
 
     private String location;
 
+    @Column(length = 1000)
+    private String logoUrl;
+
+    private String employmentType;
+
+    @Column(columnDefinition = "TEXT")
+    private String jobDescription;
+
     public CompanyDrive() {
     }
 
     public CompanyDrive(Long id, String companyName, String jobRole,
                         Double packageOffered, Double minCgpa,
                         String department, Integer maxBacklogs,
-                        String driveDate, String location) {
+                        String driveDate, String location,
+                        String logoUrl, String employmentType, String jobDescription) {
 
         this.id = id;
         this.companyName = companyName;
@@ -43,6 +52,9 @@ public class CompanyDrive {
         this.maxBacklogs = maxBacklogs;
         this.driveDate = driveDate;
         this.location = location;
+        this.logoUrl = logoUrl;
+        this.employmentType = employmentType;
+        this.jobDescription = jobDescription;
     }
 
     public Long getId() {
@@ -115,5 +127,29 @@ public class CompanyDrive {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public String getLogoUrl() {
+        return logoUrl;
+    }
+
+    public void setLogoUrl(String logoUrl) {
+        this.logoUrl = logoUrl;
+    }
+
+    public String getEmploymentType() {
+        return employmentType;
+    }
+
+    public void setEmploymentType(String employmentType) {
+        this.employmentType = employmentType;
+    }
+
+    public String getJobDescription() {
+        return jobDescription;
+    }
+
+    public void setJobDescription(String jobDescription) {
+        this.jobDescription = jobDescription;
     }
 }

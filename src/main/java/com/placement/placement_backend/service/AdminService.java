@@ -119,5 +119,45 @@ public class AdminService {
 
         return "Student Deleted Successfully";
     }
+    public User createAdmin(User admin) {
+
+    // Check if email already exists
+    if (userRepository.findByEmail(admin.getEmail()).isPresent()) {
+        throw new RuntimeException("Email already exists");
+    }
+
+    // Set the role to ADMIN
+    admin.setRole(Role.ADMIN);
+
+    // Save the new admin
+    return userRepository.save(admin);
+}
+// Get All Admins
+public List<User> getAllAdmins() {
+    return userRepository.findByRole(Role.ADMIN);
+}
+// Update Admin
+public User updateAdmin(Long id, User updatedAdmin) {
+
+    User admin = userRepository.findById(id).orElse(null);
+
+    if (admin == null) {
+        return null;
+    }
+
+    admin.setName(updatedAdmin.getName());
+    admin.setEmail(updatedAdmin.getEmail());
+    admin.setPhone(updatedAdmin.getPhone());
+
+    return userRepository.save(admin);
+}
+// Delete Admin
+public String deleteAdmin(Long id) {
+
+    userRepository.deleteById(id);
+
+    return "Admin Deleted Successfully";
+}
+    
 
 }

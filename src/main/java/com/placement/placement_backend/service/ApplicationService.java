@@ -172,4 +172,10 @@ public class ApplicationService {
 
     }
 
+    // Bulk Update Status
+    public void bulkUpdateStatus(List<Long> ids, String status) {
+        for (Long id : ids) {
+            updateStatus(id, status);
+        }
+    }
 }

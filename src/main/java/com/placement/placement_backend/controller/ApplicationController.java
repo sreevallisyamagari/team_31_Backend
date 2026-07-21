@@ -70,4 +70,14 @@ public class ApplicationController {
 
     }
 
+    // Bulk Update Status
+    @PutMapping("/bulk-status")
+    public String bulkUpdateStatus(
+            @RequestBody List<Long> ids,
+            @RequestParam String status) {
+
+        service.bulkUpdateStatus(ids, status);
+        return "Bulk Update Successful";
+    }
+
 }

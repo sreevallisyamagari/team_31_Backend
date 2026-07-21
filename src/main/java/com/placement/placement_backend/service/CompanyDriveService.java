@@ -44,6 +44,9 @@ public class CompanyDriveService {
             existingDrive.setMaxBacklogs(drive.getMaxBacklogs());
             existingDrive.setDriveDate(drive.getDriveDate());
             existingDrive.setLocation(drive.getLocation());
+            existingDrive.setLogoUrl(drive.getLogoUrl());
+            existingDrive.setEmploymentType(drive.getEmploymentType());
+            existingDrive.setJobDescription(drive.getJobDescription());
 
             return repository.save(existingDrive);
         }
